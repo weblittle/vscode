@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基于web的智能蔬菜大棚DEMO演示</title>
+<link rel="stylesheet" href="index.css">
+<meta http-equiv="refresh" content="600">
+
+</head>
+
+
+
+<body>
+
+
+
+	<br />
+	<br />
+    <h1 style="text-align: center;font-size: 28px">基于web的智能蔬菜大棚设计</h1>
+    <h2 style="text-align: center;font-size: 22px;">温度，湿度，光照强度变化的柱形图表DEMO演示</h2>
+   
+    <div>
+    	
+        <p style="text-indent: 2em">
+        Current Data
+    </div>
+    <div>
+        Temperature：<span id="showserverstr"></span>
+    </div>
+    <div>
+        Humidity：<span id="showserverstr1"></span>
+    </div>
+    <div>
+        Light intensity：<span id="showserverstr2"></span>
+    </div>
+    <!--<button type="button" onclick="getStrFromServer()">Start</button>-->
+<div id="bar-chart">
+	<div class="graph">
+		<ul class="x-axis">
+			<li><span>06-01</span></li>
+			<li><span>06-02</span></li>
+			<li><span>06-03</span></li>
+			<li><span>06-04</span></li>
+			<li><span>06-05</span></li>
+		
+			<li><span>06-06</span></li>
+			<li><span>06-07</span></li>
+		</ul>
+		<ul class="y-axis">
+			<li><span>100</span></li>
+			<li><span>75</span></li>
+			<li><span>50</span></li>
+			<li><span>25</span></li>
+			<li><span>0</span></li>
+		</ul>
+		<div class="bars">
+			<div class="bar-group">
+				<!--sta-1表示第一种颜色-->
+				<!--bar-1表示图表中的第一个柱子-->
+				<!--bar表示柱子的所有属性-->
+				<div class="bar bar-1 stat-1" style="height: 30.63%;"> 
+				     <p>30.63</p>     
+				     <span>4080</span>
+				</div>
+				<div class="bar bar-2 stat-2" style="height: 62.67%;">
+					<p>62.67</p>
+					<span>5680</span>
+				</div>
+				<div class="bar bar-3 stat-3" style="height: 2%;">
+					<p>2</p>
+					<span>1040</span>
+				</div>
+			</div>	
+			<div class="bar-group">
+				<div class="bar bar-4 stat-1" style="height: 23.34%;">
+					<p>23.34</p>
+					<span>6080</span>
+				</div>
+				<div class="bar bar-5 stat-2" style="height: 53.56%;">
+					<p>53.56</p>
+					<span>6880</span>
+				</div>
+				<div class="bar bar-6 stat-3" style="height: 22%;">
+					<p>22</p>
+					<span>1760</span>
+				</div>
+			</div>
+			<div class="bar-group">
+				<div class="bar bar-7 stat-1" style="height: 35.14%;">
+					<p>35.14</p>
+					<span>6240</span>
+				</div>
+				<div class="bar bar-8 stat-2" style="height: 34.37%;">
+					<p>34.37</p>
+					<span>5760</span>
+				</div>
+				<div class="bar bar-9 stat-3" style="height: 65%;">
+					<p>65</p>
+					<span>2880</span>
+				</div>
+			</div>
+			<div class="bar-group">
+				<div class="bar bar-10 stat-1" style="height: 29.84%;">
+					<p>29.84</p>
+					<span>3520</span>
+				</div>
+				<div class="bar bar-11 stat-2" style="height: 87.45%;">
+					<p>87.45</p>
+					<span>5120</span>
+				</div>
+				<div class="bar bar-12 stat-3" style="height: 59%">
+					<p>59</p>
+					<span>4720</span>
+				</div>
+			</div>
+			<div class="bar-group">
+				<div class="bar bar-13 stat-1" style="height: 28.52%;">
+					<p>28.52</p>
+					<span>2240</span>
+				</div>
+				<div class="bar bar-14 stat-2" style="height: 97.45%;">
+					<p>97.45</p>
+					<span>2640</span>
+				</div>
+				<div class="bar bar-15 stat-3" style="height: 10%;">
+					<p>10</p>
+					<span>7520</span>
+				</div>
+			</div>
+			<div class="bar-group">
+				<div class="bar bar-16 stat-1" style="height: 29.83%;">
+					<p>29.83</p>
+					<span>2240</span>
+				</div>
+				<div class="bar bar-17 stat-2" style="height: 32.46%;">
+					<p>32.46</p>
+					<span>2640</span>
+				</div>
+				<div class="bar bar-18 stat-3" style="height: 4%;">
+					<p>4</p>
+					<span>7520</span>
+				</div>
+			</div>
+			<div class="bar-group">
+				<div class="bar bar-19 stat-1" style="height: 34.27%;">
+					<p>34.27</p>
+					<span>2240</span>
+				</div>
+				<div class="bar bar-20 stat-2" style="height: 56.48%;">
+					<p>56.48</p>
+					<span>2640</span>
+				</div>
+				<div class="bar bar-21 stat-3" style="height: 87%;">
+					<p>87</p>
+					<span>7520</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+</body>
+<script>
+	/*设置页面自动刷新*/
+	    function myrefresh(){
+            window.location.reload();
+            }
+        setTimeout('myrefresh()',1000000); //指定1000秒刷新一次
+       /*设置按钮进行刷新*/
+        function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "在本 session 中，您已经点击这个按钮 " + sessionStorage.clickcount + " 次。";
+    } else {
+        document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+    }
+}
+        function getStrFromServer() {
+        	var judge = 1;/*判断是否运行了该函数*/
+            var xmlhttp;
+            if (window.XMLHttpRequest) {//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () 
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    var revtext = xmlhttp.responseText;
+                    var revObj = JSON.parse(revtext);
+                    var getdata = JSON.parse(revObj.data);
+                    var message = revObj.message;
+                    var result = revObj.result;
+                    if (result != 0)
+                        alert(message);
+                    else
+                    {
+                        //alert(getdata);
+                        var val1 = parseFloat(getdata.val1) >> 8 ;
+                        var val2 = (parseFloat(getdata.val1) & 0xFF) / 100;
+                        document.getElementById("showserverstr").innerHTML =val1+val2;
+                        var val3 = parseFloat(getdata.val2) >> 8 ;
+                        var val4 = (parseFloat(getdata.val2) & 0xFF) / 100;
+                        document.getElementById("showserverstr1").innerHTML =val3+val4;
+                        document.getElementById("showserverstr2").innerHTML =getdata.val3;
+                    }
+                }
+            }
+           // xmlhttp.open("GET", "http://traindev.sinoioetech.com/DeviceCtrl/DevCtrl/GetDeviceCurState?devid=DC201001661CFAFF&devsecret=123456", true);
+            xmlhttp.send();
+               judge = 0;
+        }
+        window.onload = getStrFromServer;/*函数自动执行，不需要按键触发*/
+        function sendCmdFromServer() {
+            var va15 =document.getElementById("inputCmd").value
+            if(va15==""){
+                document.getElementById("sendCmdResult").innerHTML = "指令不能为空";
+                return;
+            }
+            if(parseInt(va15)>65535){
+                document.getElementById("sendCmdResult").innerHTML = "指令数值最大为65535";
+                return;
+            } 
+            document.getElementById("sendCmdResult").innerHTML = "";
+            var xmlhttp;
+            if (window.XMLHttpRequest) {//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// 
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var revtext = xmlhttp.responseText;
+                    var revObj = JSON.parse(revtext);
+                    var message = revObj.message;
+                    var result = revObj.result;
+                    if (result != 0)
+                        alert(message);
+                    else
+                    {
+                        document.getElementById("sendCmdResult").innerHTML = revtext;
+                    }
+                }
+            }
+           // xmlhttp.open("POST", "http://traindev.sinoioetech.com/DeviceCtrl/DevCtrl/OptDeviceCommand?devid=DC201001661CFAFF&devsecret=123456&cmdname=val1&cmdvalue="+ va15 , true);
+            xmlhttp.send();
+        }
+    </script>
+</html>
